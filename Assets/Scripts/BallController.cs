@@ -1,0 +1,37 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class BallController : MonoBehaviour
+{
+    public float initialSpeed;
+    Vector2 direction;
+    Rigidbody rb;
+    
+    // Start is called before the first frame update
+    void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+        direction = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized;
+        rb.velocity = direction * initialSpeed;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        // Check if the ball is moving in a nearly straight horizontal direction
+        if (Mathf.Abs(rb.velocity.normalized.y) < 0.1f)
+        {
+            // Apply a small vertical force to prevent getting stuck in a horizontal loop
+            rb.AddForce(Vector2.up * Random.Range(-0.5f, 0.5f), ForceMode.Impulse);
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision collision)
+    {
+        // Bounce off surfaces
+        Vector2 normal = collision.contacts[0].normal;
+        direction = Vector2.Reflect(direction, normal).normalized;
+        rb.velocity = direction * initialSpeed;
+    }
+}
