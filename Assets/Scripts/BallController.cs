@@ -8,6 +8,9 @@ public class BallController : MonoBehaviour
     Vector2 direction;
     Rigidbody rb;
     public float startDelay;
+    public AgainstComputerManager againstCompManager;
+    public LocalMultiManager localMultiManager;
+
     
     // Start is called before the first frame update
     void Start()
@@ -44,5 +47,7 @@ public class BallController : MonoBehaviour
         Vector2 normal = collision.contacts[0].normal;
         direction = Vector2.Reflect(direction, normal).normalized;
         rb.velocity = direction * initialSpeed;
+        againstCompManager.PlayBounceSound();
+        localMultiManager.PlayBounceSound();
     }
 }

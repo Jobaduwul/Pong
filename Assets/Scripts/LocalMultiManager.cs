@@ -12,6 +12,8 @@ public class LocalMultiManager : MonoBehaviour
     public TextMeshProUGUI victoryText;
     public GameObject ball;
     public bool isGameOver;
+    public AudioClip bounceSound;
+    public AudioSource bounceAudio;
 
     // Start is called before the first frame update
     void Start()
@@ -49,5 +51,11 @@ public class LocalMultiManager : MonoBehaviour
     public void LoadRetry()
     {
         SceneManager.LoadScene(1);
+    }
+
+    public void PlayBounceSound()
+    {
+        bounceAudio = gameObject.GetComponent<AudioSource>();
+        bounceAudio.PlayOneShot(bounceSound);
     }
 }

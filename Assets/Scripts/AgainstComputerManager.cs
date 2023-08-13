@@ -12,6 +12,8 @@ public class AgainstComputerManager : MonoBehaviour
     public TextMeshProUGUI victoryText;
     public GameObject ball;
     public bool isGameOver;
+    public AudioClip bounceSound;
+    public AudioSource bounceAudio;
 
     // Start is called before the first frame update
     void Start()
@@ -48,6 +50,12 @@ public class AgainstComputerManager : MonoBehaviour
 
     public void LoadRetry()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
+    }
+
+    public void PlayBounceSound()
+    {
+        bounceAudio = gameObject.GetComponent<AudioSource>();
+        bounceAudio.PlayOneShot(bounceSound);
     }
 }
