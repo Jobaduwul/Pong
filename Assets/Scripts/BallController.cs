@@ -25,6 +25,11 @@ public class BallController : MonoBehaviour
             // Apply a small vertical force to prevent getting stuck in a horizontal loop
             rb.AddForce(Vector2.up * Random.Range(-0.5f, 0.5f), ForceMode.Impulse);
         }
+
+        if(transform.position.x < -15 || transform.position.x > 15)
+        {
+            Destroy(gameObject);
+        }
     }
 
     void StartBallMovement()

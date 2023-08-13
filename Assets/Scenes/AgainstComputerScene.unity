@@ -404,8 +404,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34a4afebc271d8c438f5764ffc0838d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialSpeed: 20
-  startDelay: 2
+  initialSpeed: 15
+  startDelay: 1
 --- !u!1 &210245935
 GameObject:
   m_ObjectHideFlags: 0
@@ -819,8 +819,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 695911636}
-        m_TargetAssemblyTypeName: LocalMultiManager, Assembly-CSharp
+      - m_Target: {fileID: 695911638}
+        m_TargetAssemblyTypeName: AgainstComputerManager, Assembly-CSharp
         m_MethodName: LoadMainMenuScene
         m_Mode: 1
         m_Arguments:
@@ -1012,7 +1012,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 695911637}
-  - component: {fileID: 695911636}
+  - component: {fileID: 695911638}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1020,23 +1020,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &695911636
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 695911635}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dea1d32652113f84cba28ba51674dac8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  retryButton: {fileID: 1703969133}
-  mainMenuButton: {fileID: 687878231}
-  victoryText: {fileID: 30465574}
-  ball: {fileID: 191773385}
-  isGameOver: 0
 --- !u!4 &695911637
 Transform:
   m_ObjectHideFlags: 0
@@ -1052,6 +1035,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &695911638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 695911635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcccc090519f4964086916f7ad9bc462, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  retryButton: {fileID: 1703969133}
+  mainMenuButton: {fileID: 687878231}
+  victoryText: {fileID: 30465574}
+  ball: {fileID: 191773385}
+  isGameOver: 0
 --- !u!1 &910584375
 GameObject:
   m_ObjectHideFlags: 0
@@ -1196,11 +1196,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 910584375}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c11cb8883441504ba03d4e8f77615cc, type: 3}
+  m_Script: {fileID: 11500000, guid: eb474537be24d8d4899dfa2ba12bde4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
   yRange: 3
+  computerPlayerRb: {fileID: 0}
+  ball: {fileID: 191773385}
+  yDiff: 0
 --- !u!1 &1173595744
 GameObject:
   m_ObjectHideFlags: 0
@@ -1701,8 +1704,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 695911636}
-        m_TargetAssemblyTypeName: LocalMultiManager, Assembly-CSharp
+      - m_Target: {fileID: 695911638}
+        m_TargetAssemblyTypeName: AgainstComputerManager, Assembly-CSharp
         m_MethodName: LoadRetry
         m_Mode: 1
         m_Arguments:

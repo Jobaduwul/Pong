@@ -26,4 +26,9 @@ public class MainMenuManager : MonoBehaviour
     {
         SceneManager.LoadScene(1);
     }
+
+    public void LoadAgainstComputerScene()
+    {
+        SceneManager.LoadScene(2);
+    }
 }
