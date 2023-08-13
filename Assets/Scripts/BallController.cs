@@ -7,13 +7,13 @@ public class BallController : MonoBehaviour
     public float initialSpeed;
     Vector2 direction;
     Rigidbody rb;
+    public float startDelay;
     
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        direction = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized;
-        rb.velocity = direction * initialSpeed;
+        Invoke("StartBallMovement", startDelay);
     }
 
     // Update is called once per frame
@@ -27,7 +27,13 @@ public class BallController : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision collision)
+    void StartBallMovement()
+    {
+        direction = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized;
+        rb.velocity = direction * initialSpeed;
+    }
+
+    private void OnCollisionEnter(Collision collision)
     {
         // Bounce off surfaces
         Vector2 normal = collision.contacts[0].normal;
