@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class PlayerController : MonoBehaviour
+public class Player1Controller : MonoBehaviour
 {
     float verticalInput;
     public float speed;
@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
             transform.position = new Vector2(transform.position.x, yRange);
         }
 
-        verticalInput = Input.GetAxis("Vertical");
+        verticalInput = Input.GetAxis("Vertical1");
         transform.Translate(Vector2.up * speed * Time.deltaTime * verticalInput);
     }
 }

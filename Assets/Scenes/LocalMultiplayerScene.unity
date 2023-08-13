@@ -361,6 +361,7 @@ GameObject:
   - component: {fileID: 910584376}
   - component: {fileID: 910584378}
   - component: {fileID: 910584379}
+  - component: {fileID: 910584380}
   m_Layer: 0
   m_Name: Player2
   m_TagString: Untagged
@@ -483,6 +484,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &910584380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 910584375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c11cb8883441504ba03d4e8f77615cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
+  yRange: 3
 --- !u!1 &1173595744
 GameObject:
   m_ObjectHideFlags: 0
@@ -762,8 +777,8 @@ GameObject:
   - component: {fileID: 1676560436}
   - component: {fileID: 1676560435}
   - component: {fileID: 1676560438}
-  - component: {fileID: 1676560437}
   - component: {fileID: 1676560439}
+  - component: {fileID: 1676560440}
   m_Layer: 0
   m_Name: Player1
   m_TagString: Untagged
@@ -838,20 +853,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1676560437
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1676560434}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a83491fb95ddd9498ab2e4f7f0ec698, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 3
-  yRange: 3
 --- !u!65 &1676560438
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -900,6 +901,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &1676560440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1676560434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a83491fb95ddd9498ab2e4f7f0ec698, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
+  yRange: 3
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
